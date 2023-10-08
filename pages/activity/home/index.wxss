@@ -1,0 +1,12 @@
+/* pages/activity/home/index.wxss */
+
+.view-class {
+  padding-bottom: 90px; 
+  /* 56px是底部导航栏的默认高度，如果有修改可以修改对应的高度 */
+}
+.bottom-watch {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

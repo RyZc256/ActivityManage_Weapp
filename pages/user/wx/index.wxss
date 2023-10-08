@@ -1,0 +1,11 @@
+/* pages/user/wx/index.wxss */
+.button{
+  width: 70%;
+  display: flex;
+  background-color: #AF0C2E;
+  color: #ffffff;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  border-radius: 30px;
+}

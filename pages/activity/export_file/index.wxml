@@ -1,0 +1,28 @@
+<!--pages/activity/edit/index.wxml-->
+<van-field
+  value="{{ fieldValue }}"
+  is-link
+  readonly
+  label="月份"
+  placeholder="请选择月份"
+  bind:tap="onClick"
+/>
+
+<van-empty wx:if="{{ !datashow }}" description="无数据" />
+
+<van-popup show="{{ show }}" round position="bottom">
+  <van-cascader
+    wx:if="{{ show }}"
+    value="{{ cascaderValue }}"
+    title="请选择月份"
+    options="{{ options }}"
+    active-color="#AF0C2E"
+    bind:close="onClose"
+    bind:change="onChange"
+    bind:finish="onFinish"
+  />
+</van-popup>
+
+<van-cell-group wx:if="{{ datashow }}">
+  <van-cell wx:for="{{ activityList }}" wx:key="this" id="{{ item.id }}" is-link title="{{ item.introduce }}" label="{{ item.start_time }}" bind:click="download" />
+</van-cell-group>

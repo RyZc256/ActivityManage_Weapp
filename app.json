@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/user/my/index",
+    "pages/user/wx/index",
+    "pages/user/info/index",
+    "pages/activity/pubish/index",
+    "pages/activity/home/index",
+    "pages/activity/manage/index",
+    "pages/activity/edit/index",
+    "pages/activity/sigin_in/index",
+    "pages/clas/manage/index",
+    "pages/clas/info/index",
+    "pages/clas/add/index",
+    "pages/activity/export_file/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "活动管理",
+    "navigationBarTextStyle": "black"
+  },
+  "requiredPrivateInfos": [
+    "getFuzzyLocation",
+    "choosePoi",
+    "chooseAddress",
+    "chooseLocation"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口使用"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

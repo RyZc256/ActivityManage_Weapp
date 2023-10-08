@@ -1,0 +1,27 @@
+<!--pages/user/wx/index.wxml-->
+
+<van-dialog id="van-dialog" />
+
+<view>
+    <van-cell-group>
+      <van-field
+        required
+        model:value="{{ account }}"
+        label="学号"
+        placeholder="请输入学号"
+        border="{{ false }}"
+        bind:change="onChange"
+      />
+      <van-field
+        required
+        password
+        model:value="{{ password }}"
+        label="密码"
+        placeholder="请输入密码"
+        border="{{ false }}"
+        bind:change="onChange"
+      />
+    </van-cell-group>
+  <button class="button" bindtap="bind">绑     定</button>
+  </view>
+

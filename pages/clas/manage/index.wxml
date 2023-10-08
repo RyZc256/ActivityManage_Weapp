@@ -1,0 +1,24 @@
+<!--pages/activity/manage/index.wxml-->
+<van-dialog id="van-dialog" />
+<view class="userItemListView">
+          <van-cell-group>
+            <van-cell
+              is-link
+              title="添加班级"
+              link-type="navigateTo"
+              url="/pages/clas/add/index"
+            />
+            <van-cell
+              is-link
+              title="查看班级"
+              link-type="navigateTo"
+              url="/pages/clas/info/index"
+            />
+            <!-- <van-cell
+              is-link
+              title="我管理的班级"
+              link-type="navigateTo"
+              url="#"
+            /> -->
+          </van-cell-group>
+    </view>

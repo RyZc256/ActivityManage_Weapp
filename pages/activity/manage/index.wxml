@@ -1,0 +1,31 @@
+<!--pages/activity/manage/index.wxml-->
+<van-dialog id="van-dialog" />
+
+<view class="userItemListView">
+          <van-cell-group>
+            <van-cell
+              is-link
+              title="发布活动（Publish）"
+              link-type="navigateTo"
+              url="/pages/activity/pubish/index"
+            />
+            <van-cell
+              is-link
+              title="活动编辑（Edit）"
+              link-type="navigateTo"
+              url="/pages/activity/edit/index"
+            />
+            <van-cell
+              is-link
+              title="活动签到（Sign-In）"
+              link-type="navigateTo"
+              url="/pages/activity/sigin_in/index"
+            />
+            <van-cell
+              is-link
+              title="记录导出（Export）"
+              link-type="navigateTo"
+              url="/pages/activity/export_file/index"
+            />
+          </van-cell-group>
+    </view>

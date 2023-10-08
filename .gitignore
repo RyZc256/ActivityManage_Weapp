@@ -1,0 +1,3 @@
+# 屏蔽nodejs组件上传 gitclone后需要手动npm安装vant组件库
+node_modules/*
+miniprogram_npm/*

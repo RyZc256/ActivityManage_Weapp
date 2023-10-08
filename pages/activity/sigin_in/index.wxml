@@ -1,0 +1,35 @@
+<!--pages/activity/sigin_in/index.wxml-->
+
+<van-empty wx:if="{{ isActivity }}" description="今日无活动" />
+
+<view class="view-class">
+  <van-panel wx:for="{{activityList}}" title="{{ item.introduce }}" desc="{{ item.start_time }}">
+    <view>
+      <van-row gutter="10">
+        <van-col span="10">
+          <!-- <view style="background-color: grey;"> -->
+          <view style="display: flex; flex-direction: row;justify-content: center;">
+            <image style="width: 160px; height: 90px;" src="{{ item.poster }}" />
+          </view>
+        </van-col>
+        <van-col span="13">
+          <!-- <view style="background-color: hotpink;"> -->
+          <view style="display: flex; flex-direction: row;justify-content: center;">
+            <a style="font-size: small;">
+              {{ item.simplify_detail }}
+            </a>
+          </view>
+        </van-col>
+      </van-row>
+    </view>
+    <view slot="footer" style="display: flex; justify-content: flex-end;">
+      <van-button id="{{ item.id }}" size="small" type="danger" bind:click="onClick">开始签到</van-button>
+    </view>
+  </van-panel>
+  <!-- <van-divider borderColor="#AF0C2E" /> -->
+</view>
+
+
+<van-popup show="{{ qrcodeShow }}" bind:close="onClose">
+  <van-image width="300" height="300" src="{{ qrCode }}" />
+</van-popup>

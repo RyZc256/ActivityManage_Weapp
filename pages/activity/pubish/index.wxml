@@ -1,0 +1,118 @@
+<!--pages/activity/pubish/index.wxml-->
+
+<van-cell-group>
+  <van-field
+    required
+    clearable
+    id="name"
+    label="活动名称"
+    model:value="{{ introduce }}"
+    placeholder="请输入活动名称"
+  />
+  <van-field
+    required
+    is-link
+    readonly
+    id="start_time"
+    label="开始时间"
+    model:value="{{ start_time }}"
+    placeholder="请选择活动开始时间"
+    bind:tap="fieldTap"
+  />
+  <van-field
+    required
+    is-link
+    readonly
+    id="end_time"
+    label="结束时间"
+    model:value="{{ end_time }}"
+    placeholder="请选择活动结束时间"
+    bind:tap="fieldTap"
+  />
+  <van-field
+    required
+    is-link
+    readonly
+    id="localtion"
+    label="位置"
+    model:value="{{ localtion }}"
+    placeholder="请选择活动位置"
+    bind:tap="fieldTap"
+  />
+  <van-field
+    id="localtio_detail"
+    label="具体位置"
+    model:value="{{ localtion_detail }}"
+    placeholder="请输入具体位置"
+  />
+  <van-field
+    id="detail"
+    model:value="{{ detail }}"
+    label="活动详细介绍"
+    type="textarea"
+    placeholder="请输入活动详细介绍"
+    autosize
+  />
+  <van-field
+    is-link
+    readonly
+    id="open_time"
+    label="报名开始时间"
+    model:value="{{ open_time }}"
+    placeholder="请选择报名开始时间（默认今日）"
+    bind:tap="fieldTap"
+  />
+  <van-field
+    is-link
+    readonly
+    id="student"
+    label="学生负责人"
+    model:value="{{ student }}"
+    placeholder="请选择学生负责人"
+    bind:tap="fieldTap"
+  />
+  <van-cell title="人数限制" label="0为不限制">
+    <van-stepper value="{{ people }}" bind:change="stepperOnChange" min="0" max="999"/>
+  </van-cell>
+
+  <van-field
+    value="{{ sms }}"
+    center
+    clearable
+    readonly
+    label="宣传图"
+    border="{{ false }}"
+    use-button-slot
+  >
+  <van-button icon="photo" color="#AF0C2E" round slot="button" size="small" color= type="primary" bind:click="uploadButton">上传图片</van-button>
+  </van-field>
+</van-cell-group>
+
+<van-image
+    width="320"
+    height="180"
+    lazy-load
+    style="display: flex; align-items: center; flex-direction: column;"
+    src="{{ poster }}"
+/>
+
+<button class="button" bindtap="publish">发布</button>
+
+<van-popup show="{{ uploadChecked }}" class="overlay">
+  <van-loading wx:if="{{ uploadChecked }}" color="#AF0C2E">上传中...</van-loading>
+</van-popup>
+
+
+<van-popup id="datetimePopup" show="{{ datetimeChecked }}" round position="bottom" bind:close="popupClose">
+  <van-datetime-picker
+  type="datetime"
+  value="{{ currentDate }}"
+  min-date="{{ minDate }}"
+  max-date="{{ maxDate }}"
+  bind:input="onInput"
+  bind:confirm="datetimePickerOnConfirm"
+  bind:cancel="datetimePickerOnCancel"
+  />
+</van-popup>
+
+<van-dialog id="van-dialog" />

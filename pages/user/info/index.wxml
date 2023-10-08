@@ -1,0 +1,70 @@
+<!--pages/user/info/index.wxml-->
+<van-dialog id="van-dialog" />
+
+
+<view>
+    <van-cell-group>
+      <van-field
+        disabled
+        model:value="{{ userInfo.id }}"
+        label="学号"
+        border="{{ false }}"
+      />
+      <van-field
+        model:value="{{ userInfo.name }}"
+        label="姓名"
+        border="{{ false }}"
+        disabled
+      />
+      <van-field
+        is-link
+        readonly
+        model:value="{{ sex }}"
+        label="性别"
+        border="{{ false }}"
+        disabled="{{ editStatus }}"
+        bind:click-input="selectSex"
+      />
+      <van-field
+        disabled
+        model:value="{{ userInfo.idcard }}"
+        label="身份证"
+        border="{{ false }}"
+      />
+      <van-field
+        disabled
+        model:value="{{ userInfo.class.college.name }}"
+        label="学院"
+        border="{{ false }}"
+      />
+      <van-field
+        disabled
+        model:value="{{ userInfo.class.name }}"
+        label="班级"
+        border="{{ false }}"
+      />
+      <van-field
+        model:value="{{ address }}"
+        label="住址"
+        border="{{ false }}"
+        disabled="{{ editStatus }}"
+      />
+      <van-field
+        model:value="{{ tel }}"
+        label="电话"
+        border="{{ false }}"
+        disabled="{{ editStatus }}"
+      />
+      <van-field
+        model:value="{{ userInfo.entrance_time }}"
+        label="入学时间"
+        border="{{ false }}"
+        disabled
+      />
+    </van-cell-group>
+  <button class="button" bindtap="edit">修改</button>
+</view>
+
+<van-popup show="{{ show }}" round position="bottom">
+  <van-picker show-toolbar title="性别" columns="{{ columns }}" bind:cancel="onCancel" bind:confirm="onConfirm"/>
+</van-popup>
